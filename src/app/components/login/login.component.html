@@ -1,20 +1,20 @@
-
 <div class="container">
-
     <div class="card">
+        <form #loginform="ngForm" (ngSubmit)="loginUser()">
+            <h1>Provide the Credentials</h1>
+            <small class="text-danger">{{msg}}</small>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Enter your UserName</mat-label>
+                <input matInput required [(ngModel)]="user.userName" name="userName">
+            </mat-form-field>
 
-        <h1>Provide the Credentials</h1>
-        <mat-form-field class ="field" appearance="fill">
-            <mat-label>Enter your UserName</mat-label>
-            <input matInput>
-        </mat-form-field>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Enter your Password</mat-label>
+                <input matInput required [(ngModel)]="user.password" name="password">
+            </mat-form-field>
 
-        <mat-form-field class ="field" appearance="fill">
-            <mat-label>Enter your Password</mat-label>
-            <input matInput>
-        </mat-form-field>
-
-          <a routerLink = "/emppage"  mat-raised-button color= "basic"> Submit</a>
+            <!-- <a routerLink="/emppage" mat-raised-button color="basic"> Submit</a> -->
+            <button type="submit" mat-raised-button color='basic'>Submit</button>
+        </form>
     </div>
-
 </div>

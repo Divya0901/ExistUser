@@ -1,8 +1,8 @@
 <div class="container">
 
     <div class="card">
-        <form #loginform="ngForm" (ngSubmit)="searchCustomer()">
-            <h1>Search Customer Details</h1>
+        <form #loginform="ngForm" (ngSubmit)="saveCustomer()">
+            <h1>Customer Onboarding Details</h1>
             <mat-form-field class="field" appearance="fill">
                 <mat-label>Customer Name</mat-label>
                 <input matInput [(ngModel)]="customer.name" name="name">
@@ -15,12 +15,12 @@
 
             <mat-form-field class="field" appearance="fill">
                 <mat-label>PANCard Number</mat-label>
-                <input matInput required minlength="10" [(ngModel)]="customer.panNumber" name="panNumber"  >
+                <input matInput [(ngModel)]="customer.panNumber" name="panNumber">
             </mat-form-field>
-        
+
             <mat-form-field class="field" appearance="fill">
                 <mat-label>AADHAAR Number</mat-label>
-                <input matInput required minlength="12" [(ngModel)]="customer.aadharNumber" name="aadharNumber">
+                <input matInput [(ngModel)]="customer.aadharNumber" name="aadharNumber">
             </mat-form-field>
 
             <!-- <mat-form-field class="field" appearance="fill">
@@ -28,29 +28,8 @@
                 <input matInput>
             </mat-form-field> -->
 
-            <button type="submit" mat-stroked-button color="accent">Search</button>
-            <a routerLink="/saveCustomer" mat-stroked-button color="accent">Add Customer</a>
+        <button type="submit" mat-stroked-button color="accent">Save Details</button>
         </form>
-        
+        <small class="text-danger">{{msg}}</small>
     </div>
 </div>
-
-
-<h1>Displaying tables</h1>
-<table id="users">
-  <tr>
-    <th>Id</th>
-    <th>Name</th>
-    <th>PanNumber</th>
-    <th>AadharNumber</th>
-    <th>Date Of Birth</th>
-  </tr>
-
-  <tr *ngFor="let items of CustomerDetails">
-    <th>{{items.id}}</th>
-    <th>{{items.name}}</th>
-    <th>{{items.panNumber}}</th>
-    <th>{{items.aadharNumber}}</th>
-    <th>{{items.dob}}</th> 
-  </tr>
-</table>

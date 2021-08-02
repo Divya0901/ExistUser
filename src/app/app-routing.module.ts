@@ -4,6 +4,7 @@ import { combineLatest } from 'rxjs';
 import { EmppageComponent } from './components/emppage/emppage.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { LoginComponent } from './components/login/login.component';
+import { SaveCustomerComponent } from './components/save-customer/save-customer.component';
 
 const routes: Routes = [
 
@@ -25,7 +26,14 @@ const routes: Routes = [
     path: "emppage",
     component:EmppageComponent,
     pathMatch: "full"
-}
+  },
+
+  {
+    path: "saveCustomer",
+    component:SaveCustomerComponent,
+    pathMatch: "full"
+  }
+
 ];
 
 @NgModule({
